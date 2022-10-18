@@ -22,6 +22,9 @@ public class CalculatorServiceImpl implements CalculatorService{
 
     @Override
     public double divide(Integer a, Integer b) {
-        return (double) a / b;
+        if (b == 0) {
+            throw new DivideByZeroException("Делить на ноль нельзя!");
+        }
+        return a.doubleValue() / b;
     }
 }

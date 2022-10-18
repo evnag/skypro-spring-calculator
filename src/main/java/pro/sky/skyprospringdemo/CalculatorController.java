@@ -45,7 +45,6 @@ public class CalculatorController {
     public String divide(@RequestParam(name = "num1", required = false) Integer a,
                          @RequestParam(name = "num2", required = false) Integer b) {
         if(a == null || b == null) return "Один из параметров не введен!";
-        if(b == 0) return "На ноль делить нельзя!";
         double divide = calculatorService.divide(a, b);
         return String.valueOf(divide);
     }
